@@ -1,0 +1,84 @@
+﻿<Window x:Class="UseNet_Reader.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UseNet_Reader"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <ListBox x:Name="DisplayList" Margin="20" Grid.Column="1" Grid.Row="1" />
+
+        
+
+        <Grid Grid.Column="1" Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="8*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBox 
+                x:Name="Command" 
+                Grid.Column="0" 
+                Margin="20" 
+                VerticalAlignment="Top"
+            />
+            <TextBlock
+                x:Name="CommandPrompt"
+                Grid.Column="0"
+                Margin="20,3"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Text="Manual command input:"
+            />
+            <Button 
+                x:Name="RunCommand" 
+                Click="RunCommand_Click" 
+                Grid.Column="1" 
+                Content=" Run "
+                Margin="10,20" 
+                MaxHeight="23"
+                VerticalAlignment="Top"
+            />
+
+        </Grid>
+        <Button 
+            Grid.Column="2" 
+            Content="Add to favorites" 
+            HorizontalAlignment="Left" 
+            Margin="20" Grid.Row="1" 
+            VerticalAlignment="Top" 
+            Click="AddToFavorites_Click"
+            Opacity="0.66"
+            IsHitTestVisible="False"
+            />
+        
+        <Button 
+            Grid.Column="2" 
+            Content="Remove from favorites" 
+            HorizontalAlignment="Left" 
+            Margin="20,45,0,0" Grid.Row="1" 
+            VerticalAlignment="Top" 
+            Click="RemoveFromFavorites_Click"
+            Opacity="0.66"
+            IsHitTestVisible="False"
+            />
+        <Button Grid.Column="1" Content="Reload List" HorizontalAlignment="Left" Margin="159,31,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <TextBlock x:Name="Marvin" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+
+
+
+
+    </Grid>
+</Window>
